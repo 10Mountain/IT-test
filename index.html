@@ -1552,7 +1552,7 @@ export default function App() {
           <div className="space-y-4 animate-fadeIn">
             <div className="flex items-center justify-between text-xs text-slate-400 px-1">
               <span className="bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-800 text-[9.5px] font-semibold max-w-[180px] truncate">
-                {quizMode.startsWith('分野:') ? quizMode : quizMode === 'all' ? '107問全問模試' : quizMode === 'random' ? '10問ランダム' : '弱点リベンジ'}
+                {quizMode.startsWith('分野:') ? quizMode : quizMode === 'all' ? `${questionsList.length}問全問模試` : quizMode === 'random' ? '10問ランダム' : '弱点リベンジ'}
               </span>
 
               {/* 音読制御ボタン */}
@@ -1760,7 +1760,7 @@ export default function App() {
                       ITリテラシー完璧網羅
                     </h2>
                     <p className="text-xs text-slate-400 max-w-[85%] leading-relaxed">
-                      AIの類題を徹底クレンジング。重複なし、すべて画像由来の【全107問】だけを美しく揃えた最高精度のデータベースです。
+                      AIの類題を徹底クレンジング。重複なし、すべて画像由来の【全{questionsList.length}問】だけを美しく揃えた最高精度のデータベースです。
                     </p>
                   </div>
                   <div className="absolute right-[-15px] bottom-[-25px] opacity-10">
@@ -1819,7 +1819,7 @@ export default function App() {
                       </div>
                       <div>
                         <h4 className="text-xs font-bold text-slate-200">
-                          全問総模試（大ボリューム 107問）
+                          全問総模試（大ボリューム {questionsList.length}問）
                         </h4>
                         <p className="text-[10px] text-slate-500 mt-0.5">
                           試験範囲に該当するすべての問題に一挙に挑戦
@@ -1843,7 +1843,7 @@ export default function App() {
                           実力確認（10問ランダム）
                         </h4>
                         <p className="text-[10px] text-slate-500 mt-0.5">
-                          107問からランダムに10問を抽出。毎日の腕試し用
+                          {questionsList.length}問からランダムに10問を抽出。毎日の腕試し用
                         </p>
                       </div>
                     </div>
